@@ -1,0 +1,386 @@
+/* Variables de Diseño (Naranjas suaves, modo oscuro premium) */
+:root {
+    /* Fondos */
+    --bg-main: #121418;        /* Fondo principal súper oscuro y elegante */
+    --bg-card: #1C1E24;        /* Tarjetas un poco más claras para dar profundidad */
+    
+    /* Acentos (Naranja) */
+    --primary: #FF9F68;        /* Naranja principal suave */
+    --primary-hover: #F28C52;
+    --primary-light: rgba(255, 159, 104, 0.15); /* Transparencia naranja para fondos sutiles */
+    
+    /* Textos */
+    --text-dark: #F3F4F6;      /* Blanco roto para no cansar la vista (reemplaza al negro del modo claro) */
+    --text-muted: #9CA3AF;     /* Gris claro para textos secundarios */
+    
+    /* Estructura */
+    --border: #2D3139;         /* Bordes oscuros, casi invisibles pero estructurados */
+    
+    /* Sombras (En modo oscuro deben ser más intensas y opacas) */
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    
+    /* Tooltips en modo oscuro */
+    --tooltip-bg: #F3F4F6;
+    --tooltip-text: #121418;
+    
+    /* Tamaños */
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --sidebar-w: 90px;
+}
+
+/* Reset y Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Navegación Flotante Lateral */
+.side-dock {
+    width: var(--sidebar-w);
+    height: 90vh;
+    background: var(--bg-card);
+    position: fixed;
+    top: 5vh;
+    left: 20px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    z-index: 100;
+    border: 1px solid var(--border); /* Añadido borde sutil al dock */
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    object-fit: cover;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    font-size: 20px;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+/* Tooltips Corregidos */
+.nav-links a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 120%;
+    background: var(--tooltip-bg);
+    color: var(--tooltip-text);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(0);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+    z-index: 200;
+}
+
+.nav-links a:hover::after {
+    opacity: 1;
+    transform: translateX(8px);
+}
+
+/* Contenedor Principal */
+.dashboard {
+    margin-left: calc(var(--sidebar-w) + 50px);
+    padding: 40px;
+    width: calc(100% - var(--sidebar-w) - 70px);
+    max-width: 1200px;
+}
+
+.section-block {
+    margin-bottom: 80px;
+    scroll-margin-top: 50px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+    position: relative;
+    padding-left: 15px;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    height: 25px;
+    width: 5px;
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+/* Tipografía Inicio */
+.intro-text h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+.intro-text span {
+    color: var(--primary);
+}
+.intro-text p {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Bento Grid (Diseño asimétrico premium) */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 230px);
+    gap: 20px;
+}
+
+.bento-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 25px;
+    text-decoration: none;
+    color: var(--text-dark);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--border);
+}
+
+.bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.bento-card i {
+    font-size: 32px;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.bento-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.bento-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.feature-card {
+    grid-column: span 2;
+    grid-row: span 2;
+    /* Ajuste de gradiente para modo oscuro limpio */
+    background: linear-gradient(145deg, #1C1E24, var(--primary-light)); 
+}
+.feature-card i { font-size: 48px; }
+.feature-card h3 { font-size: 24px; }
+.video-card {
+    grid-column: span 2;
+    background: var(--bg-card);
+}
+
+/* Herramientas */
+.tools-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.tool-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+}
+.tool-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+.tool-info h3 { margin-bottom: 10px; font-size: 20px;}
+.tool-info p { color: var(--text-muted); font-size: 15px; margin-bottom: 20px; line-height: 1.5;}
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--primary);
+    color: #121418; /* Botón naranja con texto oscuro resalta más */
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background 0.3s;
+}
+.btn:hover { background: var(--primary-hover); }
+
+/* Acordeón (Programa) */
+.section-banner { width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 30px; box-shadow: var(--shadow-sm); }
+.accordion-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.accordion-header {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    background: var(--bg-card);
+    transition: background 0.2s;
+}
+.accordion-header:hover { background: var(--primary-light); }
+.accordion-header i { transition: transform 0.3s; color: var(--primary); }
+.accordion-content {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.6;
+}
+.accordion-item.active .accordion-content { padding: 20px; border-top: 1px solid var(--border); }
+.accordion-item.active .accordion-header i { transform: rotate(180deg); }
+
+/* Regimen */
+.regimen-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 40px; align-items: start; }
+.rules-card {
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--border);
+}
+.rules-card.success { 
+    border-left-color: var(--primary); 
+    background: var(--primary-light); 
+}
+.rules-card h3 { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 18px;}
+.rules-card i { color: var(--primary); }
+.rules-card ul { margin-left: 20px; color: var(--text-muted); font-size: 15px; line-height: 1.6; }
+.rules-card p { color: var(--text-dark); font-size: 15px; line-height: 1.6; }
+.regimen-image img { width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-md); object-fit: cover;}
+
+/* Responsive básico */
+@media (max-width: 992px) {
+    .bento-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .feature-card { grid-column: span 2; }
+    .tools-container, .regimen-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    body { flex-direction: column; }
+    .side-dock {
+        position: fixed; top: auto; bottom: 20px; left: 50%; transform: translateX(-50%);
+        width: 90%; height: 70px; flex-direction: row; padding: 0 20px; justify-content: space-between; z-index: 1000;
+    }
+    .logo-container { display: none; }
+    .nav-links { flex-direction: row; justify-content: space-between; gap: 0; }
+    .dashboard { margin-left: 0; width: 100%; padding: 20px; padding-bottom: 120px; }
+    .bento-grid { grid-template-columns: 1fr; }
+    .feature-card, .video-card { grid-column: span 1; }
+    .nav-links a::after { display: none; }
+}
+
+
+
+
+/* Ajustes para la grilla de fórmulas */
+.bento-card p {
+    font-family: 'Segoe UI', monospace; /* Fuente más legible para fórmulas */
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-top: 10px;
+}
+
+.bento-card strong {
+    color: var(--text-dark); /* Resalta las variables */
+    font-weight: 600;
+}
+
+/* Alineación de los iconos */
+.bento-card i {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: var(--primary);
+}
+
+/* Responsive para que no se desacomode */
+@media (max-width: 992px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+}
