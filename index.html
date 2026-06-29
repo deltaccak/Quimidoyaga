@@ -13,20 +13,18 @@
 </head>
 <body>
 
-   <nav class="side-dock">
+<nav class="side-dock">
     <div class="logo-container">
-        <img src="quimicalogo.jpg" alt="Química Idoyaga" class="logo-img" onerror="this.src='https://via.placeholder.com/50/FF9F68/FFFFFF?text=QI'">
+        <img src="quimicalogo.jpg" alt="Química Idoyaga" class="logo-img">
     </div>
     <ul class="nav-links">
-        <li><a href="#inicio" class="active" data-tooltip="Inicio"><i class="fa-solid fa-house"></i></a></li>
+        <li><a href="#inicio" data-tooltip="Inicio"><i class="fa-solid fa-house"></i></a></li>
         <li><a href="#recursos" data-tooltip="Material de Estudio"><i class="fa-solid fa-folder-open"></i></a></li>
-        <li><a href="#formulas" data-tooltip="Fórmulas"><i class="fa-solid fa-calculator"></i></a></li>
-        <li><a href="#herramientas" data-tooltip="Herramientas"><i class="fa-solid fa-flask"></i></a></li>
+        <li><a href="#formulas" data-tooltip="Fórmulas Químicas"><i class="fa-solid fa-calculator"></i></a></li>
+        <li><a href="#consejos" data-tooltip="Guía de Éxito"><i class="fa-solid fa-lightbulb"></i></a></li>
         <li><a href="#programa" data-tooltip="Programa"><i class="fa-solid fa-list-check"></i></a></li>
         <li><a href="#regimen" data-tooltip="Evaluación"><i class="fa-solid fa-scale-balanced"></i></a></li>
     </ul>
-    
-    
 </nav>
 
     <main class="dashboard">
@@ -76,6 +74,43 @@
                 </a>
             </div>
         </section>
+
+
+
+
+        <section id="herramientas" class="section-block">
+            <h2 class="section-title">Herramientas Indispensables</h2>
+            <div class="tools-container">
+                <div class="tool-card">
+                    <div class="tool-icon"><i class="fa-solid fa-table-cells"></i></div>
+                    <div class="tool-info">
+                        <h3>Tabla Periódica del Parcial</h3>
+                        <p>El PDF oficial exacto que te van a dar el día del examen. Acostumbrate a usar esta.</p>
+                        <a href="https://drive.google.com/file/d/1p-qJUytFx7BnyldKtEQIo3hZWhwwTGzP/view" target="_blank" class="btn">Abrir PDF</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon interactive"><i class="fa-solid fa-atom"></i></div>
+                    <div class="tool-info">
+                        <h3>Tabla Periódica Interactiva</h3>
+                        <p>Plataforma Ptable. Excelente para ver propiedades, estados de oxidación y orbitales dinámicamente.</p>
+                        <a href="https://ptable.com/?lang=es#Propiedades" target="_blank" class="btn">Abrir Ptable</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <section id="formulas" class="section-block">
     <h2 class="section-title">Formulario de Química</h2>
@@ -133,27 +168,81 @@
 
 
 
-        <section id="herramientas" class="section-block">
-            <h2 class="section-title">Herramientas Indispensables</h2>
-            <div class="tools-container">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fa-solid fa-table-cells"></i></div>
-                    <div class="tool-info">
-                        <h3>Tabla Periódica del Parcial</h3>
-                        <p>El PDF oficial exacto que te van a dar el día del examen. Acostumbrate a usar esta.</p>
-                        <a href="https://drive.google.com/file/d/1p-qJUytFx7BnyldKtEQIo3hZWhwwTGzP/view" target="_blank" class="btn">Abrir PDF</a>
-                    </div>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon interactive"><i class="fa-solid fa-atom"></i></div>
-                    <div class="tool-info">
-                        <h3>Tabla Periódica Interactiva</h3>
-                        <p>Plataforma Ptable. Excelente para ver propiedades, estados de oxidación y orbitales dinámicamente.</p>
-                        <a href="https://ptable.com/?lang=es#Propiedades" target="_blank" class="btn">Abrir Ptable</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="consejos" class="section-block">
+    <h2 class="section-title">Guía Maestra: Tips y Estrategias</h2>
+    <div class="consejos-grid">
+        
+        <div class="consejo-card">
+            <h3><i class="fa-solid fa-calendar-days"></i> Estrategia de Estudio</h3>
+            <ul>
+                <li><strong>Plan 8 semanas:</strong> 3 días teoría, 2 práctica, 1 repaso, 1 descanso.</li>
+                <li><strong>Simulacros:</strong> 2 semanas antes, rendir parciales cronometrados.</li>
+                <li><strong>Bloques Pomodoro:</strong> Estudiar 25-45 min con descansos.</li>
+                <li><strong>Flashcards:</strong> Anki para pKas, fórmulas y conversiones.</li>
+            </ul>
+        </div>
+
+        <div class="consejo-card">
+            <h3><i class="fa-solid fa-chart-line"></i> Temas de Alto Rendimiento</h3>
+            <ul>
+                <li><strong>Estequiometría:</strong> Conversiones g↔mol, reactivo limitante, agente oxidante/reductor.</li>
+                <li><strong>Soluciones:</strong> Molaridad, diluciones y mezclas.</li>
+                <li><strong>Ácido-Base:</strong> pH, pKa, tampones y titulación.</li>
+                <li><strong>Redox:</strong> Balanceo por ion-electrón.</li>
+            
+            </ul>
+        </div>
+
+        <div class="consejo-card">
+            <h3><i class="fa-solid fa-triangle-exclamation"></i> Evitar Errores y Lab</h3>
+            <ul>
+                <li><strong>Subrayar:</strong> Identificar datos y condicionantes.</li>
+                <li><strong>Justificar:</strong> Escribir procedimientos paso a paso.</li>
+                <li><strong>Lab Remoto:</strong> Seguir la plantilla oficial al 100%.</li>
+                <li><strong>Capturas:</strong> Deben ser legibles y con leyenda clara.</li>
+            </ul>
+        </div>
+
+        <div class="consejo-card">
+            <h3><i class="fa-solid fa-clock"></i> Día del Examen</h3>
+            <ul>
+                <li>Leer todo el examen en 5-7 min primero.</li>
+                <li>Priorizar preguntas seguras y fáciles.</li>
+                <li>Marcar dudosas y volver al final.</li>
+                <li>Escribir aproximaciones numéricas.</li>
+                <li>Cumplir con la cantidad de decimales que pide el enunciado.</li>
+            </ul>
+        </div>
+
+        <div class="consejo-card">
+            <h3><i class="fa-solid fa-lightbulb"></i> Trucos Avanzados</h3>
+            <ul>
+                <li>Memorizar la posición de datos en la <strong>Tabla Oficial</strong>.</li>
+                <li>Armar lista de "Reacciones Patrón".</li>
+                <li>Automatizar cálculos de dilución en Excel.</li>
+              
+            </ul>
+        </div>
+
+        <div class="consejo-card">
+            <h3><i class="fa-solid fa-file-circle-check"></i> Recursos Recomendados</h3>
+            <ul>
+                <li>Drive + Canal YouTube (Cátedra).</li>
+                <li>Flashcards públicas (Anki/Quizlet).</li>
+                <li>Videos de micro-lecciones (3-8 min).</li>
+                <li>Parciales resueltos cronometrados.</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
 
         <section id="programa" class="section-block">
             <h2 class="section-title">Programa de Temas</h2>
